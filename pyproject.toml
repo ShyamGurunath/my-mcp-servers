@@ -1,12 +1,13 @@
 [project]
 name = "mcp-servers"
 version = "0.1.0"
-description = "Add your description here"
+description = "MCP SERVER"
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
     "httpx>=0.28.1",
-    "mcp-server-time>=0.6.2",
     "mcp[cli]>=1.9.4",
+    "ollama>=0.5.1",
+    "openai>=1.91.0",
     "psutil>=7.0.0",
 ]

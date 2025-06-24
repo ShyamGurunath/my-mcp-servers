@@ -1,9 +1,8 @@
 import psutil
 from mcp.server.fastmcp import FastMCP
-from mcp.server.fastmcp.utilities.types import Path
 
 
-mcp = FastMCP("System info")
+mcp = FastMCP("System info", description="Get system information.", host="0.0.0.0", port=8050)
 
 def get_cpu_usage():
     return psutil.cpu_percent(interval=1)
@@ -46,6 +45,9 @@ def generate_prompt():
     """Generate a prompt for the user."""
     return "What is the current CPU usage & disk usage & ram usage ?"
 
+def main():
+    mcp.run(transport="streamable-http")
+
 
 if __name__=="__main__":
-    mcp.run(transport="stdio")
+    main()
